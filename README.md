@@ -1,4 +1,3 @@
-## Feature http-client documentation
+# Hello Micronaut
 
-- [Micronaut Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
-
+Implementation of Quarkus Tutorial [https://redhat-developer-demos.github.io/quarkus-tutorial/quarkus-tutorial/index.html](https://redhat-developer-demos.github.io/quarkus-tutorial/quarkus-tutorial/index.html) with Micronaut 2.0
