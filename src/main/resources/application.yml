@@ -1,10 +1,16 @@
 micronaut:
   application:
-    name: helloMn
+    name: Hello Micronaut
+  http:
+    services:
+      fruity:
+        url: http://www.fruityvice.com
 
 
-hello:
-  gretting: "Hello"
+
+hello-mn:
+  gretting: "Bonjour"
+
 
 
 endpoints:

@@ -12,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @MicronautTest
 public class FruityServiceClientSpec {
 
-
     @Inject
     FruityService fruityService;
 

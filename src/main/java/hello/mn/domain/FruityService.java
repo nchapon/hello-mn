@@ -5,10 +5,10 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.client.annotation.Client;
 import io.reactivex.Single;
 
-@Client("http://www.fruityvice.com/api/fruit")
+@Client("fruity")
 public interface FruityService {
 
-    @Get(value = "/{name}", produces = MediaType.APPLICATION_JSON)
+    @Get(value = "/api/fruit/{name}", produces = MediaType.APPLICATION_JSON)
     Single<FruityVice> getFruitByName(String name);
 
 }
