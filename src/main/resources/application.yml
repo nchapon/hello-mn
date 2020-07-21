@@ -7,11 +7,8 @@ micronaut:
         url: http://www.fruityvice.com
 
 
-
 hello-mn:
   gretting: "Bonjour"
-
-
 
 endpoints:
   all:
