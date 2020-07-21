@@ -2,7 +2,9 @@ package hello.mn;
 
 
 import hello.mn.domain.Fruit;
+import hello.mn.domain.FruitDTO;
 import hello.mn.domain.FruitRepository;
+import hello.mn.domain.FruityService;
 import io.micronaut.core.util.CollectionUtils;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.HttpStatus;
@@ -11,23 +13,30 @@ import io.micronaut.http.annotation.*;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Controller("/fruits")
 public class FruitResource {
 
     private final FruitRepository fruitRepository;
+    private final FruityService fruityService;
 
-    public FruitResource(FruitRepository fruitRepository) {
+    public FruitResource(FruitRepository fruitRepository, FruityService fruityService) {
         this.fruitRepository = fruitRepository;
+        this.fruityService = fruityService;
     }
 
     @Get
-    public List<Fruit> listFruits(@QueryValue Optional<String> season){
+    public List<FruitDTO> listFruits(@QueryValue Optional<String> season){
 
         if (season.isPresent()){
-            return fruitRepository.findBySeason(season.get());
+            return fruitRepository.findBySeason(season.get()).stream()
+                    .map(f -> FruitDTO.of(f, fruityService.getFruitByName(f.getName()).blockingGet()))
+                    .collect(Collectors.toList());
         }
-        return CollectionUtils.iterableToList(fruitRepository.findAll());
+        return CollectionUtils.iterableToList(fruitRepository.findAll()).stream()
+                .map(f -> FruitDTO.of(f, fruityService.getFruitByName(f.getName()).blockingGet()))
+                .collect(Collectors.toList());
 
     }
 
