@@ -17,7 +17,9 @@ endpoints:
   info:
     sensitive: false
     enabled: true
-
+  metrics:
+    sensitive: false
+    enabled: true
 
 datasources:
   default:
