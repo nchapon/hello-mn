@@ -11,9 +11,11 @@ hello-mn:
   gretting: "Bonjour"
 
 endpoints:
-  all:
+  health:
     sensitive: false
-  refresh:
+    enabled: true
+  info:
+    sensitive: false
     enabled: true
 
 
