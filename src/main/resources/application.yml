@@ -5,6 +5,8 @@ micronaut:
     services:
       fruity:
         url: http://www.fruityvice.com
+      punkapi:
+        url: https://api.punkapi.com
 
 
 hello-mn:
