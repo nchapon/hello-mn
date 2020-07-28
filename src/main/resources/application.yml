@@ -8,6 +8,18 @@ micronaut:
       punkapi:
         url: https://api.punkapi.com
 
+  security:
+    authentication: bearer
+    token:
+      roles-name: roles
+      jwt:
+        signatures:
+          jwks:
+            keycloak:
+              url: "http://localhost:8082/auth/realms/micronaut/protocol/openid-connect/certs"
+
+
+
 
 hello-mn:
   gretting: "Bonjour"

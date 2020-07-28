@@ -104,6 +104,13 @@
       <artifactId>micronaut-management</artifactId>
     </dependency>
 
+
+    <dependency>
+      <groupId>io.micronaut.security</groupId>
+      <artifactId>micronaut-security-jwt</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
@@ -179,6 +186,13 @@
               <version>1.1.1</version>
             </path>
 
+            <path>
+              <groupId>io.micronaut.security</groupId>
+              <artifactId>micronaut-security-annotations</artifactId>
+              <version>${micronaut.security.version}</version>
+            </path>
+
+
           </annotationProcessorPaths>
           <compilerArgs>
             <arg>-Amicronaut.processing.group=hello.mn</arg>
@@ -208,6 +222,13 @@
                   <artifactId>micronaut-data-processor</artifactId>
                   <version>1.1.1</version>
                 </path>
+
+                <path>
+                  <groupId>io.micronaut.security</groupId>
+                  <artifactId>micronaut-security-annotations</artifactId>
+                  <version>${micronaut.security.version}</version>
+                </path>
+
               </annotationProcessorPaths>
             </configuration>
           </execution>

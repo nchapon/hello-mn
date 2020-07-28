@@ -4,10 +4,13 @@ import io.micrometer.core.instrument.MeterRegistry;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.security.annotation.Secured;
+import io.micronaut.security.rules.SecurityRule;
 
 import java.util.Calendar;
 import java.util.TimeZone;
 
+@Secured(SecurityRule.IS_ANONYMOUS)
 @Controller("/offset")
 public class OffsetResource {
 

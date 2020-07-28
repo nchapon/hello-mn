@@ -3,6 +3,8 @@ package hello.mn.reactive;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.security.annotation.Secured;
+import io.micronaut.security.rules.SecurityRule;
 import io.reactivex.Observable;
 
 import java.util.ArrayList;
@@ -11,6 +13,7 @@ import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+@Secured(SecurityRule.IS_ANONYMOUS)
 @Controller("/beers")
 public class BeerResource {
 
