@@ -12,14 +12,14 @@ public class SecureResource {
 
     @Get
     @Secured("mn-user")
-    public Single<Authentication> get(Authentication auth){
-        return Single.just(auth);
+    public Single<String> get(Authentication auth){
+        return Single.just(auth.getName());
     }
 
     @Get("/admin")
     @Secured("mn-admin")
-    public Single<String> getAdmin(Authentication auth){
-        return Single.just("You're admin !");
+    public Single<Authentication> getAdmin(Authentication auth){
+        return Single.just(auth);
     }
 
 
